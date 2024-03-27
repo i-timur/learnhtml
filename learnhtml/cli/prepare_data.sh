@@ -41,8 +41,8 @@ chmod +x cetr_to_dragnet.sh
 cd ..
 mkdir dragnet
 mkdir cleaneval
-mv -t dragnet dragnet_data/{HTML,Corrected}
-mv -t cleaneval dragnet_data/cetr-dataset/cleaneval/en/{Corrected,HTML}
+mv dragnet_data/{HTML,Corrected} dragnet
+mv dragnet_data/cetr-dataset/cleaneval/en/{Corrected,HTML} cleaneval
 
 rm -rf dragnet_data
 
