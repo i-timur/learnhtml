@@ -101,9 +101,9 @@ def constrain_memory():
 
     if 'tensorflow' == K.backend():
         from keras.backend.tensorflow_backend import set_session
-        config = tf.ConfigProto()
+        config = tf.compat.v1.ConfigProto()
         config.gpu_options.allow_growth = True
-        set_session(tf.Session(config=config))
+        set_session(tf.compat.v1.Session(config=config))
 
 
 class Metrics(Callback):
@@ -289,7 +289,7 @@ class MyKerasClassifier(KerasSparseClassifier):
             if 'tensorflow' == K.backend():
                 import tensorflow as tf
                 K.clear_session()  # clear the session just for good measure
-                tf.reset_default_graph()  # this is needed for the python state
+                tf.compat.v1.reset_default_graph()  # this is needed for the python state
             del self.model
 
         return result

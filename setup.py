@@ -71,23 +71,23 @@ PACKAGE_DATA = {'': ['*.pyx', '*.pxd', '*.c', '*.h'],
 EXT_MODULES = get_ext_modules()
 # requirements
 REQUIRES = [
-    'tensorflow==1.8.0',
+    'tensorflow==2.11.0',
     'click==6.7',
     'click_log==0.3.2',
     'dask[complete]==0.17.5',
-    'keras==2.2.0',
-    'pandas>=0.23.1',
-    'scipy==1.1.0',
-    'scikit_learn==0.19.1',
+    'keras==2.11.0',
+    'pandas==0.24.1',
+    'scipy==1.6.0',
+    'scikit_learn==0.23.0',
     'sparse==0.3.1',
     'lxml==4.2.1',
-    'numpy>=1.14.3'
+    'numpy>=1.20.0'
 ]
 
 SETUP_REQUIRES = [
     'Cython',
     'lxml==4.2.1',
-    'numpy>=1.14.3'
+    'numpy>=1.20.0'
 ]
 
 setup(
