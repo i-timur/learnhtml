@@ -5,9 +5,16 @@ Html web content extraction library using *mostly* DOM features as well as some 
 ### Requirements
 First you will need to install the dependencies. For the binary dependencies:
 
-```bash
-sudo apt-get install recode libxml2-dev libxslt1-dev unzip
-```
+- Linux
+    ```bash
+    sudo apt-get install recode libxml2-dev libxslt1-dev unzip
+    ```
+
+Set up environment variables:
+
+Create a file named `.env` in the root of the project and copy the contents of the `.env.example` file into it.
+Then replace environment variables with the corresponding values on your system.
+
 
 Python dependencies:
 ```bash
@@ -18,11 +25,3 @@ Build the project and install it locally
 ```bash
 pip install -e .
 ```
-
-### Running the scripts
-
-```bash
-./learnhtml/cli/prepare_data.sh <<WHERE_TO_DOWNLOAD_DATA>> <<NUMBER_OF_WORKERS>>
-```
-
-Copyright (C) 2018 Nichita Uțiu

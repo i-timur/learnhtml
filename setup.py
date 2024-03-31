@@ -19,7 +19,7 @@ except ImportError:
 def find_libxml2_include():
     """Find lxml2 libraries to include in the extension"""
     include_dirs = []
-    for d in ['/usr/include/libxml2', '/usr/local/include/libxml2', '/usr/local/Cellar/libxml2/2.12.6/include/libxml2']:
+    for d in ['/usr/include/libxml2', '/usr/local/include/libxml2', os.environ['LIBXML2_PATH']]:
         if os.path.exists(os.path.join(d, 'libxml/tree.h')):
             include_dirs.append(d)
     return include_dirs
@@ -33,7 +33,7 @@ def get_ext_modules():
                       include_dirs=lxml.get_include() + find_libxml2_include(), language="c++", libraries=['xml2']),
             Extension('learnhtml.dataset_conversion.lcs', sources=["learnhtml/dataset_conversion/lcs.pyx"],
                       include_dirs=[np.get_include()], language="c++")
-            ], {'language_level': 2})
+            ], compiler_directives={'language_level': "2"})
     return []
 
 
